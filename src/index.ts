@@ -1,18 +1,18 @@
-import express, { Request, Response } from 'express';
+/**
+ * @file index.ts
+ * @description The entry point for the application
+ * @module index
+ * @author Joshua Linehan
+ */
+
+import express from "express";
+import currentSongRouter from "./api/current-song";
 
 const app = express();
-const PORT = process.env.PORT || 3000; // Port provided by Render's environment
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello, world!');
-});
+app.use(express.json());
 
-// Only start the server if we're running the app directly (not testing)
-if (process.env.NODE_ENV !== 'test') {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}
+// Routes
+app.use("/api/current-song", currentSongRouter);
 
-// for testing
 export default app;
