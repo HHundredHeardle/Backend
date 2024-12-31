@@ -8,7 +8,7 @@
 import express from "express";
 import currentSongRouter from "./api/current-song";
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 const app = express();
 
@@ -17,4 +17,6 @@ app.use(express.json());
 // Routes
 app.use("/api/current-song", currentSongRouter);
 
-export default app;
+let server = app.listen(port);
+
+export { app, server };
