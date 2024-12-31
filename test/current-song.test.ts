@@ -5,10 +5,11 @@
  */
 
 import request from 'supertest';
-import app from '../src/';
+import { app, server } from '../src/';
 import { closeConnection } from '../src/db';
 
 afterAll(async () => {
+    server.close();
     await closeConnection();
 });
 

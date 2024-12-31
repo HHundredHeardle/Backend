@@ -4,9 +4,11 @@
  * @author Joshua Linehan
  */
 
+import { server } from '../src/';
 import { query, closeConnection } from '../src/db';
 
 afterAll(async () => {
+    server.close();
     await closeConnection();
 });
 
