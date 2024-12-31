@@ -4,7 +4,11 @@
  * @author Joshua Linehan
  */
 
-import { query } from '../src/db';
+import { query, closeConnection } from '../src/db';
+
+afterAll(async () => {
+    await closeConnection();
+});
 
 test('should execute a query and return object with appropriate properties', async () => {
     const result = await query('SELECT * FROM tracks LIMIT 1');

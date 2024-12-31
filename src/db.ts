@@ -28,6 +28,6 @@ export const query = async (text: string, params?: any[]) => {
     }
 };
 
-afterAll(async () => {
+export const closeConnection = async () => {
     await connection.end();
-});
+};

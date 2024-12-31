@@ -6,6 +6,11 @@
 
 import request from 'supertest';
 import app from '../src/';
+import { closeConnection } from '../src/db';
+
+afterAll(async () => {
+    await closeConnection();
+});
 
 describe('GET /api/current-song', () => {
 
