@@ -9,35 +9,30 @@
  * @author Joshua Linehan
  */
 
-import express, { Request, Response, Router } from 'express';
-import Redis from 'ioredis';
+import { Request, Response, Router } from 'express';
 import dotenv from "dotenv";
+import { query } from '../db';
+
+var assert = require('assert');
 
 dotenv.config();
 
-const router = express.Router();
-const redis = new Redis(process.env.REDIS_URL!)
-
-// Test the connection
-redis.on("connect", () => {
-    console.log("Connected to Redis");
-});
-
-redis.on("error", (err) => {
-    console.error("Redis connection error:", err);
-});
+const router = Router();
 
 router.get('/', async (req: Request, res: Response) => {
     try {
-        res.json(await redis.hgetall("tracks:default:12"));
+        // mock date
+        let date = 12;
+        // query db for default song
+        const result = await query("SELECT * FROM tracks WHERE id=(SELECT track FROM default_tracks WHERE date=$1)", [date]);
+        assert(result!.length == 1);
+        res.json(result![0]);
     }
     catch (err) {
-        console.error(err);
+        console.log(err);
+        res.status(500);
+        res.send("Internal server error");
     }
-});
-
-afterAll(async () => {
-    await redis.quit();
 });
 
 export default router;

@@ -27,17 +27,18 @@ describe('GET /api/current-song', () => {
         expect(response.status).toBe(200);
 
         let fields = Object.keys(response.body);
+        expect(fields.includes("id")).toBe(true);
         expect(fields.includes("title")).toBe(true);
         expect(fields.includes("artist")).toBe(true);
         expect(fields.includes("place")).toBe(true);
-        expect(fields.includes("year")).toBe(true);
+        expect(fields.includes("countdown_year")).toBe(true);
         expect(fields.includes("clip1")).toBe(true);
         expect(fields.includes("clip2")).toBe(true);
         expect(fields.includes("clip3")).toBe(true);
         expect(fields.includes("clip4")).toBe(true);
         expect(fields.includes("clip5")).toBe(true);
         expect(fields.includes("clip6")).toBe(true);
-        expect(fields.length).toBe(10);
+        expect(fields.length).toBe(11);
     })
 
     it('Retrieves Step Up The Morphine by DMA\'S', async () => {
