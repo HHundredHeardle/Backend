@@ -1,5 +1,8 @@
 name: Test and Deploy
 
+env:
+  DB_URL: ${{ secrets.DB_URL }}
+
 on:
   push:
     branches:
