@@ -16,6 +16,7 @@ This is the backend for Hottest Hundred Heardle, a web app inspired by the now-d
   - [3.1 - Tracks](#31---tracks)
   - [3.2 - tracks.json](#32---tracksjson)
   - [3.3 - defaults.json](#33---defaultsjson)
+  - [3.4 - track-info.json](#34---track-infojson)
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
 
@@ -86,7 +87,7 @@ Track information is stored in [tracks.json](data/tracks.json), with the date th
 | day.artist | string | the artist of the song          |
 | day.title  | string | the title of the song           |
 
-# 3.4 - track-info.json
+### 3.4 - track-info.json
 
 Additional data for answers is stored in [track-info.json](data/track-info.json).
 
