@@ -63,6 +63,8 @@ describe('GET /api/current-song', () => {
         expect(response.status).toBe(200);
         expect(response.body['artist']).toBe('DMA\'S');
         expect(response.body['title']).toBe('Step Up The Morphine');
+        expect(response.body["year"]).toBe(2016);
+        expect(response.body["place"]).toBe(39);
     });
 
 });

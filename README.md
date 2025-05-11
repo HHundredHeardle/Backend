@@ -14,6 +14,8 @@ This is the backend for Hottest Hundred Heardle, a web app inspired by the now-d
   - [2.2 - Automated Deployment](#22---automated-deployment)
 - [3 - Data](#3---data)
   - [3.1 - Tracks](#31---tracks)
+  - [3.2 - tracks.json](#32---tracksjson)
+  - [3.3 - defaults.json](#33---defaultsjson)
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
 
@@ -53,15 +55,47 @@ mp3 files for tracks are stored in the [Tracks folder](/Tracks/); 6 mp3 clips ar
 ```
 Tracks
 └── <artist>
-    └── <title>
-        ├── clip1.mp3
-        ├── clip2.mp3
-        ├── clip3.mp3
-        ├── clip4.mp3
-        ├── clip5.mp3
-        └── clip6.mp3
+  └── <title>
+    ├── clip1.mp3
+    ├── clip2.mp3
+    ├── clip3.mp3
+    ├── clip4.mp3
+    ├── clip5.mp3
+    └── clip6.mp3
 ```
 
+### 3.2 - tracks.json
+
+Track information is stored in [tracks.json](data/tracks.json), with the date the song is chosen as the key - the appropriate song should be accessed by using the current date as the key.
+
+| Key                   | Value  | Description                     |
+| --------------------- | ------ | ------------------------------- |
+| year                  | object | year song is chosen             |
+| year.month            | object | month song is chosen            |
+| year.month.day        | object | day of the month song is chosen |
+| year.month.day.artist | string | the artist of the song          |
+| year.month.day.title  | string | the title of the song           |
+
+### 3.3 - defaults.json
+
+[defaults.json](data/defaults.json) stores a default track for each day of the month in the event that one was not specified for a given date in [tracks.json](#32---tracksjson).
+
+| Key        | Type   | Description                     |
+| ---------- | ------ | ------------------------------- |
+| day        | object | day of the month song is chosen |
+| day.artist | string | the artist of the song          |
+| day.title  | string | the title of the song           |
+
+# 3.4 - track-info.json
+
+Additional data for answers is stored in [track-info.json](data/track-info.json).
+
+| Key                | Type   | Description                |
+| ------------------ | ------ | -------------------------- |
+| artist             | object | artist of the song         |
+| artist.title       | object | title of the song          |
+| artist.title.year  | number | year song was in countdown |
+| artist.title.place | number | song's place in countdown  |
 
 ## 4 - Endpoints
 

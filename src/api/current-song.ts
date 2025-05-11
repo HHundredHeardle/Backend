@@ -21,21 +21,35 @@ const router = Router();
 router.get('/', async (req: Request, res: Response) => {
     try {
         const data: any = {};
-        // choose folder
         // find date
         // mock date
+        const date = new Date(2025, 4, 2);
         // lookup artist/title
-        let artist = "DMA'S";
-        let title = "Step Up The Morphine";
+        let artist = "";
+        let title = "";
+        try {
+            let tracks = require("../../data/tracks.json");
+            let song = tracks[date.getFullYear()][date.getMonth()][date.getDate()];
+            artist = song["artist"];
+            title = song["title"];
+        }
+        catch {
+            console.log("Date not found in tracks.json. using default");
+            let defaults = require("../../data/defaults.json");
+            let song = defaults[date.getDate()];
+            artist = song["artist"];
+            title = song["title"];
+        }
+
         data["artist"] = artist;
         data["title"] = title;
 
         // lookup song data
-        // mock song data
-        data["year"] = 2016;
-        data["place"] = 39;
+        let trackInfo = require("../../data/track-info.json");
+        data["year"] = trackInfo[artist][title]["year"];
+        data["place"] = trackInfo[artist][title]["place"];
 
-        // mock artist/title
+        // construct folder path
         let folderPath = path.join("Tracks", artist, title);
 
         // read files
