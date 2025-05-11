@@ -2,22 +2,20 @@
 
 ## Introduction
 
-This is the backend for Hottest Hundred Heardle, a web app inspired by the now-defunct music guessing game Heardle, and featuring songs that have featured in Triple J's Hottest 100. The backend will be used to store user data including statistics such as streaks, as well as data for the current day's song.
+This is the backend for Hottest Hundred Heardle, a web app inspired by the now-defunct music guessing game Heardle, and featuring songs that have featured in Triple J's Hottest 100. The backend will be used to provide song data to the app.
 
 ## Table of Contents
 - [1 - Architecture](#1---architecture)
   - [1.1 - Render](#11---render)
   - [1.2 - TypeScript](#12---typescript)
-  - [1.3 - PostgreSQL](#13---postgresql)
-  - [1.4 - Jest](#14---jest)
+  - [1.3 - Jest](#13---jest)
 - [2 - CI/CD](#2---cicd)
   - [2.1 - Automated Testing](#21---automated-testing)
   - [2.2 - Automated Deployment](#22---automated-deployment)
-- [3 - Database Layout](#3---database-layout)
-  - [3.1 - tracks](#31---tracks)
-  - [3.2 - answers](#32---answers)
-  - [3.3 - daily-tracks](#33---daily-tracks)
-  - [3.4 - default-tracks](#34---default-tracks)
+- [3 - Data](#3---data)
+  - [3.1 - Tracks](#31---tracks)
+  - [3.2 - tracks.json](#32---tracksjson)
+  - [3.3 - defaults.json](#33---defaultsjson)
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
 
@@ -32,11 +30,7 @@ Render is used to host the backend.
 
 The backend features a REST api written in TypeScript, which is hosted on Render.
 
-### 1.3 - PostgreSQL
-
-The data for the backend is stored in a PostgreSQL database provided by Render.
-
-### 1.4 - Jest
+### 1.3 - Jest
 
 The tests for the typescript files are handled by Jest.
 
@@ -52,53 +46,56 @@ The CI/CD pipeline is set to run the tests provided in the [tests folder](test/)
 
 The CI/CD pipeline is set to deploy to Render if all tests pass. This is set only on pushes to main.
 
-## 3 - Database Layout
+## 3 - Data
 
-### 3.1 - tracks
+### 3.1 - Tracks
 
-Data for each song
+mp3 files for tracks are stored in the [Tracks folder](/Tracks/); 6 mp3 clips are stored in a subfolder of the artist and then title of the song.
 
-| Column Name      | Data Type      | Constraints                                 | Description                        |
-| ---------------- | -------------- | ------------------------------------------- | ---------------------------------- |
-| `id`             | `INTEGER`      | `PRIMARY KEY`, `AUTO_INCREMENT`, `NOT NULL` | Unique identifier for each track   |
-| `artist`         | `VARCHAR(255)` | `NOT NULL`                                  | Artist of track                    |
-| `title`          | `VARCHAR(255)` | `NOT NULL`                                  | Title of track                     |
-| `countdown_year` | `SMALLINT`     | `NOT NULL`                                  | Year of hottest hundred countdown  |
-| `place`          | `SMALLINT`     | `NOT NULL`                                  | Place in hottest hundred countdown |
-| `clip1`          | `BYTEA`        | `NOT NULL`                                  | 1st audio clip of track            |
-| `clip2`          | `BYTEA`        | `NOT NULL`                                  | 2nd audio clip of track            |
-| `clip3`          | `BYTEA`        | `NOT NULL`                                  | 3rd audio clip of track            |
-| `clip4`          | `BYTEA`        | `NOT NULL`                                  | 4th audio clip of track            |
-| `clip5`          | `BYTEA`        | `NOT NULL`                                  | 5th audio clip of track            |
-| `clip6`          | `BYTEA`        | `NOT NULL`                                  | 6th audio clip of track            |
+```
+Tracks
+└── <artist>
+  └── <title>
+    ├── clip1.mp3
+    ├── clip2.mp3
+    ├── clip3.mp3
+    ├── clip4.mp3
+    ├── clip5.mp3
+    └── clip6.mp3
+```
 
-### 3.2 - answers
+### 3.2 - tracks.json
 
-List of possible answers
+Track information is stored in [tracks.json](data/tracks.json), with the date the song is chosen as the key - the appropriate song should be accessed by using the current date as the key.
 
-| Column Name | Data Type      | Constraints                                 | Description                       |
-| ----------- | -------------- | ------------------------------------------- | --------------------------------- |
-| `id`        | `INTEGER`      | `PRIMARY KEY`, `AUTO_INCREMENT`, `NOT NULL` | Unique identifier for each answer |
-| `artist`    | `VARCHAR(255)` | `NOT NULL`                                  | Artist of track                   |
-| `title`     | `VARCHAR(255)` | `NOT NULL`                                  | Title of track                    |
+| Key                   | Value  | Description                     |
+| --------------------- | ------ | ------------------------------- |
+| year                  | object | year song is chosen             |
+| year.month            | object | month song is chosen            |
+| year.month.day        | object | day of the month song is chosen |
+| year.month.day.artist | string | the artist of the song          |
+| year.month.day.title  | string | the title of the song           |
 
-### 3.3 - daily-tracks
+### 3.3 - defaults.json
 
-Chosen tracks for specific days
+[defaults.json](data/defaults.json) stores a default track for each day of the month in the event that one was not specified for a given date in [tracks.json](#32---tracksjson).
 
-| Column Name | Data Type | Constraints               | Description                                     |
-| ----------- | --------- | ------------------------- | ----------------------------------------------- |
-| `date`      | `DATE`    | `PRIMARY KEY`, `NOT NULL` | Date track is played on                         |
-| `track`     | `INTEGER` | `FOREIGN KEY`,`NOT NULL`  | id of track (references [tracks](#31---tracks)) |
+| Key        | Type   | Description                     |
+| ---------- | ------ | ------------------------------- |
+| day        | object | day of the month song is chosen |
+| day.artist | string | the artist of the song          |
+| day.title  | string | the title of the song           |
 
-### 3.4 - default-tracks
+# 3.4 - track-info.json
 
-Default tracks for each day of the month
+Additional data for answers is stored in [track-info.json](data/track-info.json).
 
-| Column Name | Data Type  | Constraints               | Description                                     |
-| ----------- | ---------- | ------------------------- | ----------------------------------------------- |
-| `date`      | `SMALLINT` | `PRIMARY KEY`, `NOT NULL` | Day track is played on                          |
-| `track`     | `INTEGER`  | `FOREIGN KEY`,`NOT NULL`  | id of track (references [tracks](#31---tracks)) |
+| Key                | Type   | Description                |
+| ------------------ | ------ | -------------------------- |
+| artist             | object | artist of the song         |
+| artist.title       | object | title of the song          |
+| artist.title.year  | number | year song was in countdown |
+| artist.title.place | number | song's place in countdown  |
 
 ## 4 - Endpoints
 
@@ -106,32 +103,34 @@ Default tracks for each day of the month
 
 /api/current-song
 
-<table><thead>
-  <tr>
-    <th>Method</th>
-    <th>Query Parameters</th>
-    <th>Request Body</th>
-    <th>Response Body</th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td style="vertical-align:top">GET</td>
-    <td style="vertical-align:top">None</td>
-    <td style="vertical-align:top">None</td>
-    <td>
-      <ul>
-        <li>title : string (the title of the song)</li>
-        <li>artist : string (the artist of the song)</li>
-        <li>place : int (position of the song in the hottest hundred)</li>
-        <li>countdown_year : int (year song was in hottest hundred)</li>
-        <li>clip1 : mp3 binary (1st audio clip of song)</li>
-        <li>clip2 : mp3 binary (2nd audio clip of song)</li>
-        <li>clip3 : mp3 binary (3rd audio clip of song)</li>
-        <li>clip4 : mp3 binary (4th audio clip of song)</li>
-        <li>clip5 : mp3 binary (5th audio clip of song)</li>
-        <li>clip6 : mp3 binary (6th audio clip of song)</li>
-      </ul>  
-    </td>
-  </tr>
-</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Query Parameters</th>
+      <th>Request Body</th>
+      <th>Response Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align:top">GET</td>
+      <td style="vertical-align:top">None</td>
+      <td style="vertical-align:top">None</td>
+      <td>
+        <ul>
+          <li>title: string (the title of the song)</li>
+          <li>artist: string (the artist of the song)</li>
+          <li>place: int (position of the song in the hottest hundred)</li>
+          <li>year: int (year song was in hottest hundred)</li>
+          <li>clip1: mp3 binary (1st audio clip of song)</li>
+          <li>clip2: mp3 binary (2nd audio clip of song)</li>
+          <li>clip3: mp3 binary (3rd audio clip of song)</li>
+          <li>clip4: mp3 binary (4th audio clip of song)</li>
+          <li>clip5: mp3 binary (5th audio clip of song)</li>
+          <li>clip6: mp3 binary (6th audio clip of song)</li>
+        </ul>  
+      </td>
+    </tr>
+  </tbody>
 </table>
