@@ -31,14 +31,7 @@ describe('GET /api/current-song', () => {
         expect(fields.includes("artist")).toBe(true);
         expect(fields.includes("place")).toBe(true);
         expect(fields.includes("year")).toBe(true);
-        expect(fields.includes("clip1")).toBe(true);
-        expect(fields.includes("clip2")).toBe(true);
-        expect(fields.includes("clip3")).toBe(true);
-        expect(fields.includes("clip4")).toBe(true);
-        expect(fields.includes("clip5")).toBe(true);
-        expect(fields.includes("clip6")).toBe(true);
-        expect(fields.length).toBe(10);
-        console.log(response.body);
+        expect(fields.length).toBe(4);
     });
 
     it("Fields are non-empty", async () => {
@@ -50,12 +43,6 @@ describe('GET /api/current-song', () => {
         expect(!response.body["title"]).toBe(false);
         expect(!response.body["year"]).toBe(false);
         expect(!response.body["place"]).toBe(false);
-        expect(!response.body["clip1"]).toBe(false);
-        expect(!response.body["clip2"]).toBe(false);
-        expect(!response.body["clip3"]).toBe(false);
-        expect(!response.body["clip4"]).toBe(false);
-        expect(!response.body["clip5"]).toBe(false);
-        expect(!response.body["clip6"]).toBe(false);
     });
 
     it('Retrieves Step Up The Morphine by DMA\'S', async () => {

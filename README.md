@@ -124,12 +124,6 @@ Additional data for answers is stored in [track-info.json](data/track-info.json)
           <li>artist: string (the artist of the song)</li>
           <li>place: int (position of the song in the hottest hundred)</li>
           <li>year: int (year song was in hottest hundred)</li>
-          <li>clip1: mp3 binary (1st audio clip of song)</li>
-          <li>clip2: mp3 binary (2nd audio clip of song)</li>
-          <li>clip3: mp3 binary (3rd audio clip of song)</li>
-          <li>clip4: mp3 binary (4th audio clip of song)</li>
-          <li>clip5: mp3 binary (5th audio clip of song)</li>
-          <li>clip6: mp3 binary (6th audio clip of song)</li>
         </ul>  
       </td>
     </tr>
