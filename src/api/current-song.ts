@@ -1,20 +1,22 @@
 /**
  * @file current-song.ts
- * @description Routes for retrieving daily song
+ * @description Route for retrieving daily song
  * @module api/current-song
  * 
  * @functions
- *   - GET /api/current-song - Retrieves current day's song
+ *   - GET /api/current-song - Retrieves current day's song information
  * 
  * @author Joshua Linehan
  */
 
 import { Request, Response, Router } from 'express';
+import { StatusCodes } from 'http-status-codes';
 
 const router = Router();
 
 router.get('/', async (_req: Request, res: Response) => {
     try {
+
         // load data
         let tracks = require("../../data/tracks.json");
         let defaults = require("../../data/defaults.json");
@@ -51,7 +53,7 @@ router.get('/', async (_req: Request, res: Response) => {
     }
     catch (err) {
         console.error(err);
-        res.status(500);
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR);
         res.send("Internal server error");
     }
 });
