@@ -21,24 +21,12 @@ const router = Router();
 
 router.get('/', async (req: Request, res: Response) => {
     try {
-        let clipNum = req.body["clip"];
+        const clipNum: number = parseInt(req.query["clip"] as string);
 
-        // validate request
-        if (Object.keys(req.body).length !== NUM_ARGS) {
-            console.error("GET /api/clip: 400 incorrect arguments");
-            res.status(StatusCodes.BAD_REQUEST);
-            res.send("Bad request: incorrect arguments");
-            return;
-        }
-        else if (!clipNum) {
+        if (!clipNum) {
             console.error("GET /api/clip: 400 clip not provided");
             res.status(StatusCodes.BAD_REQUEST);
             res.send("Bad request: clip not provided");
-            return;
-        } else if ((typeof clipNum) !== "number") {
-            console.error("GET /api/clip: 400 clip is not a number");
-            res.status(StatusCodes.BAD_REQUEST);
-            res.send("Bad request: clip is not a number");
             return;
         } else if (clipNum > NUM_CLIPS || clipNum < 1) {
             console.error("GET /api/clip: 400 invalid clip");

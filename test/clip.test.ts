@@ -13,7 +13,7 @@ const NUM_CLIPS: number = 6;
 describe('GET /api/clip', () => {
 
     it("Returns a JSON", async () => {
-        const response = await request(app).get("/api/clip").send({ "clip": 1 });
+        const response = await request(app).get("/api/clip").query({ "clip": 1 });
 
         expect(response.status).toBe(StatusCodes.OK);
 
@@ -26,7 +26,7 @@ describe('GET /api/clip', () => {
 
     it("Contains appropriate fields", async () => {
         for (let i = 1; i < NUM_CLIPS + 1; i++) {
-            const response = await request(app).get("/api/clip").send({ "clip": i });
+            const response = await request(app).get("/api/clip").query({ "clip": i });
 
             expect(response.status).toBe(StatusCodes.OK);
 
@@ -38,7 +38,7 @@ describe('GET /api/clip', () => {
 
     it("Fields are non-empty", async () => {
         for (let i = 1; i < NUM_CLIPS + 1; i++) {
-            const response = await request(app).get("/api/clip").send({ "clip": i });
+            const response = await request(app).get("/api/clip").query({ "clip": i });
 
             expect(response.status).toBe(StatusCodes.OK);
 
@@ -49,17 +49,15 @@ describe('GET /api/clip', () => {
     it('Bad requests give 400', async () => {
         let response = await request(app).get('/api/clip');
         expect(response.status).toBe(StatusCodes.BAD_REQUEST);
-        response = await request(app).get('/api/clip').send({ "clip": 0 });
+        response = await request(app).get('/api/clip').query({ "clip": 0 });
         expect(response.status).toBe(StatusCodes.BAD_REQUEST);
-        response = await request(app).get('/api/clip').send({ "clip": -1 });
+        response = await request(app).get('/api/clip').query({ "clip": -1 });
         expect(response.status).toBe(StatusCodes.BAD_REQUEST);
-        response = await request(app).get('/api/clip').send({ "clip": 7 });
+        response = await request(app).get('/api/clip').query({ "clip": 7 });
         expect(response.status).toBe(StatusCodes.BAD_REQUEST);
-        response = await request(app).get('/api/clip').send({ "clip": "" });
+        response = await request(app).get('/api/clip').query({ "clip": "" });
         expect(response.status).toBe(StatusCodes.BAD_REQUEST);
-        response = await request(app).get('/api/clip').send({ "clip": "1" });
-        expect(response.status).toBe(StatusCodes.BAD_REQUEST);
-        response = await request(app).get('/api/clip').send({ "clip": "one" });
+        response = await request(app).get('/api/clip').query({ "clip": "one" });
         expect(response.status).toBe(StatusCodes.BAD_REQUEST);
     });
 

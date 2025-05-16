@@ -19,6 +19,7 @@ This is the backend for Hottest Hundred Heardle, a web app inspired by the now-d
   - [3.4 - track-info.json](#34---track-infojson)
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
+  - [4.2 - clip](#42---clip)
 
 
 ## 1 - Architecture
@@ -124,6 +125,33 @@ Additional data for answers is stored in [track-info.json](data/track-info.json)
           <li>artist: string (the artist of the song)</li>
           <li>place: int (position of the song in the hottest hundred)</li>
           <li>year: int (year song was in hottest hundred)</li>
+        </ul>  
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### 4.2 - clip
+
+/api/clip
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Query Parameters</th>
+      <th>Request Body</th>
+      <th>Response Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align:top">GET</td>
+      <td style="vertical-align:top">clip: the requested clip number (1..6)</td>
+      <td style="vertical-align:top">None</td>
+      <td>
+        <ul>
+          <li>clip&lt;clip&gt;: string (base 64 encoded mp3 audio clip)</li>
         </ul>  
       </td>
     </tr>
