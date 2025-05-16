@@ -17,6 +17,7 @@ This is the backend for Hottest Hundred Heardle, a web app inspired by the now-d
   - [3.2 - tracks.json](#32---tracksjson)
   - [3.3 - defaults.json](#33---defaultsjson)
   - [3.4 - track-info.json](#34---track-infojson)
+  - [3.5 - answers.txt](#35---answerstxt)
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
   - [4.2 - clip](#42---clip)
@@ -98,6 +99,14 @@ Additional data for answers is stored in [track-info.json](data/track-info.json)
 | artist.title       | object | title of the song          |
 | artist.title.year  | number | year song was in countdown |
 | artist.title.place | number | song's place in countdown  |
+
+### 3.5 - answers.txt
+
+[answers.txt](data/answers.txt) stores possible answers in the following format:
+
+`<title> - <artist>`
+
+This data is obtained from each hottest 100 countdown, excluding all-time and special countdowns (i.e. since 1993). Duplicates have been removed.
 
 ## 4 - Endpoints
 
