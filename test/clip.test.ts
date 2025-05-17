@@ -30,7 +30,7 @@ describe('GET /api/clip', () => {
 
             expect(response.status).toBe(StatusCodes.OK);
 
-            let fields = Object.keys(response.body);
+            const fields = Object.keys(response.body);
             expect(fields.includes(`clip${i}`)).toBe(true);
             expect(fields.length).toBe(1);
         }

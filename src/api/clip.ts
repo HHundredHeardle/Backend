@@ -45,21 +45,21 @@ router.get('/', async (req: Request, res: Response) => {
         let artist = "";
         let title = "";
         try {
-            let tracks = require("../../data/tracks.json");
-            let song = tracks[date.getFullYear()][date.getMonth()][date.getDate()];
+            const tracks = require("../../data/tracks.json");
+            const song = tracks[date.getFullYear()][date.getMonth()][date.getDate()];
             artist = song["artist"];
             title = song["title"];
         }
         catch {
             console.log("Date not found in tracks.json. using default");
-            let defaults = require("../../data/defaults.json");
-            let song = defaults[date.getDate()];
+            const defaults = require("../../data/defaults.json");
+            const song = defaults[date.getDate()];
             artist = song["artist"];
             title = song["title"];
         }
 
         // construct folder path
-        let folderPath = path.join("Tracks", artist, title);
+        const folderPath = path.join("Tracks", artist, title);
 
         // read file
         const filePath = path.join(folderPath, `track_${clipNum}.mp3`);

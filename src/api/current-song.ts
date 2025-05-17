@@ -18,8 +18,8 @@ router.get('/', async (_req: Request, res: Response) => {
     try {
 
         // load data
-        let tracks = require("../../data/tracks.json");
-        let defaults = require("../../data/defaults.json");
+        const tracks = require("../../data/tracks.json");
+        const defaults = require("../../data/defaults.json");
 
         const data: any = {};
         // find date
@@ -29,13 +29,13 @@ router.get('/', async (_req: Request, res: Response) => {
         let artist = "";
         let title = "";
         try {
-            let song = tracks[date.getFullYear()][date.getMonth()][date.getDate()];
+            const song = tracks[date.getFullYear()][date.getMonth()][date.getDate()];
             artist = song["artist"];
             title = song["title"];
         }
         catch {
             console.log("Date not found in tracks.json. using default");
-            let song = defaults[date.getDate()];
+            const song = defaults[date.getDate()];
             artist = song["artist"];
             title = song["title"];
         }
@@ -44,7 +44,7 @@ router.get('/', async (_req: Request, res: Response) => {
         data["title"] = title;
 
         // lookup song data
-        let trackInfo = require("../../data/track-info.json");
+        const trackInfo = require("../../data/track-info.json");
         data["year"] = trackInfo[artist][title]["year"];
         data["place"] = trackInfo[artist][title]["place"];
 

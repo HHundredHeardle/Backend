@@ -27,7 +27,7 @@ describe('GET /api/current-song', () => {
 
         expect(response.status).toBe(StatusCodes.OK);
 
-        let fields = Object.keys(response.body);
+        const fields = Object.keys(response.body);
         expect(fields.includes("title")).toBe(true);
         expect(fields.includes("artist")).toBe(true);
         expect(fields.includes("place")).toBe(true);
