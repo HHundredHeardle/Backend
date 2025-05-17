@@ -17,8 +17,11 @@ This is the backend for Hottest Hundred Heardle, a web app inspired by the now-d
   - [3.2 - tracks.json](#32---tracksjson)
   - [3.3 - defaults.json](#33---defaultsjson)
   - [3.4 - track-info.json](#34---track-infojson)
+  - [3.5 - answers.txt](#35---answerstxt)
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
+  - [4.2 - clip](#42---clip)
+  - [4.3 - answers](#43---answers)
 
 
 ## 1 - Architecture
@@ -98,6 +101,14 @@ Additional data for answers is stored in [track-info.json](data/track-info.json)
 | artist.title.year  | number | year song was in countdown |
 | artist.title.place | number | song's place in countdown  |
 
+### 3.5 - answers.txt
+
+[answers.txt](data/answers.txt) stores possible answers in the following format:
+
+`<title> - <artist>`
+
+This data is obtained from each hottest 100 countdown, excluding all-time and special countdowns (i.e. since 1993). Duplicates have been removed.
+
 ## 4 - Endpoints
 
 ### 4.1 - current-song
@@ -124,13 +135,61 @@ Additional data for answers is stored in [track-info.json](data/track-info.json)
           <li>artist: string (the artist of the song)</li>
           <li>place: int (position of the song in the hottest hundred)</li>
           <li>year: int (year song was in hottest hundred)</li>
-          <li>clip1: mp3 binary (1st audio clip of song)</li>
-          <li>clip2: mp3 binary (2nd audio clip of song)</li>
-          <li>clip3: mp3 binary (3rd audio clip of song)</li>
-          <li>clip4: mp3 binary (4th audio clip of song)</li>
-          <li>clip5: mp3 binary (5th audio clip of song)</li>
-          <li>clip6: mp3 binary (6th audio clip of song)</li>
         </ul>  
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### 4.2 - clip
+
+/api/clip
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Query Parameters</th>
+      <th>Request Body</th>
+      <th>Response Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align:top">GET</td>
+      <td style="vertical-align:top">clip: the requested clip number (1..6)</td>
+      <td style="vertical-align:top">None</td>
+      <td>
+        <ul>
+          <li>clip&lt;clip&gt;: string (base 64 encoded mp3 audio clip)</li>
+        </ul>  
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### 4.3 - answers
+
+/api/answers
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Query Parameters</th>
+      <th>Request Body</th>
+      <th>Response Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align:top">GET</td>
+      <td style="vertical-align:top">None</td>
+      <td style="vertical-align:top">None</td>
+      <td>
+      List of answers:
+      <br>
+      &lt;title&gt; - &lt;artist&gt;
       </td>
     </tr>
   </tbody>
