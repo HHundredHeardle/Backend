@@ -21,6 +21,7 @@ This is the backend for Hottest Hundred Heardle, a web app inspired by the now-d
 - [4 - Endpoints](#4---endpoints)
   - [4.1 - current-song](#41---current-song)
   - [4.2 - clip](#42---clip)
+  - [4.3 - answers](#43---answers)
 
 
 ## 1 - Architecture
@@ -162,6 +163,33 @@ This data is obtained from each hottest 100 countdown, excluding all-time and sp
         <ul>
           <li>clip&lt;clip&gt;: string (base 64 encoded mp3 audio clip)</li>
         </ul>  
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### 4.3 - answers
+
+/api/answers
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Query Parameters</th>
+      <th>Request Body</th>
+      <th>Response Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="vertical-align:top">GET</td>
+      <td style="vertical-align:top">None</td>
+      <td style="vertical-align:top">None</td>
+      <td>
+      List of answers:
+      <br>
+      &lt;title&gt; - &lt;artist&gt;
       </td>
     </tr>
   </tbody>

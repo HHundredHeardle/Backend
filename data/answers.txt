@@ -258,7 +258,7 @@ Before - Caligula
 Beggin for Thread - Banks
 Begin Again - Purity Ring
 Being Followed - Rocket Science
-Believe (Like a Version) - DMA's
+Believe (Like a Version) - DMA'S
 Believe - The Chemical Brothers featuring Kele Okereke
 Bellyache - Billie Eilish
 Ben Lee - Klinger
@@ -571,7 +571,7 @@ Creep - Frank Bennett
 Creep - Radiohead
 Creepin - Kingswood
 Creeping Out Sara - NOFX
-Criminals - DMA's
+Criminals - DMA'S
 Cromagnon Man - Snout
 Cruel Summer (Like a Version) - G Flip
 Crush the Losers - Regurgitator
@@ -607,7 +607,7 @@ Darkside - Bring Me the Horizon
 Darling, I - Tyler, the Creator featuring Teezo Touchdown
 Dashboard - Modest Mouse
 Dawn of the Dead - Does It Offend You, Yeah?
-Dawning - DMA's
+Dawning - DMA'S
 Day & Age - Ball Park Music
 Days Like These - The Cat Empire
 Dazed & Confused - Ruel
@@ -625,7 +625,7 @@ Default - Django Django
 Degenerate Boy - The Mark of Cain
 Deja Vu - Olivia Rodrigo
 Delete (Like a Version) - Sticky Fingers
-Delete - DMA's
+Delete - DMA'S
 Delilah (Pull Me Out of This) - Fred Again
 Delilah - Florence and the Machine
 Delivery Man - The Cruel Sea
@@ -655,7 +655,7 @@ Disparate Youth - Santigold
 Distant Sun - Crowded House
 Divorcee by 23 - Clare Bowditch
 Dixie Drug Store - Grant Lee Buffalo
-Do I Need You Now? - DMA's
+Do I Need You Now? - DMA'S
 Do I Wanna Know? (Like a Version) - Chvrches
 Do I Wanna Know? - Arctic Monkeys
 Do It - Swoop
@@ -798,7 +798,7 @@ Everybody Here Wants You - Jeff Buckley
 Everybody Hurts - R.E.M.
 Everybody Rise - Amy Shark
 Everybody's Free (To Wear Sunscreen) - Quindon Tarver
-Everybody's Saying Thursday's the Weekend - DMA's
+Everybody's Saying Thursday's the Weekend - DMA'S
 Everyday - A$AP Rocky featuring Rod Stewart, Miguel & Mark Ronson
 Everyday Formula - Regurgitator
 Everyday I Love You Less and Less - Kaiser Chiefs
@@ -1079,7 +1079,7 @@ Got on My Skateboard - Skegss
 Got the Life - Korn
 Grace - Jeff Buckley
 Graceless - The National
-Grandma's Hands - Meg Mac
+GranDMA'S Hands - Meg Mac
 Graveyard - Halsey
 Gravity - The Superjesus
 Greed for Your Love - Missy Higgins
@@ -1375,7 +1375,7 @@ In My Place - Coldplay
 In Your Eyes - The Weeknd
 In Your Light - Gotye
 In for the Kill - La Roux
-In the Air - DMA's
+In the Air - DMA'S
 In the Cold, Cold Night - The White Stripes
 In the Meantime - Spacehog
 In the Neighbourhood - Sisters Underground
@@ -1529,7 +1529,7 @@ Laugh Now Cry Later - Drake featuring Lil Durk
 Laughing With - Regina Spektor
 Laura - Bat for Lashes
 Laura - Scissor Sisters
-Lay Down - DMA's
+Lay Down - DMA'S
 Lay Down - Touch Sensitive
 Lay It Down - The Rubens
 Lay It on Me - Vance Joy
@@ -2370,7 +2370,7 @@ Sidelines - Phoebe Bridgers
 Silent Sigh - Badly Drawn Boy
 Silhouettes - Avicii
 Silhouettic - Birds of Tokyo
-Silver - DMA's
+Silver - DMA'S
 Silver Lizard - Tumbleweed
 Simple Song - The Shins
 Simulation - Tkay Maidza
@@ -2525,7 +2525,7 @@ Steal My Kisses - Ben Harper
 Steer - Missy Higgins
 Step - Vampire Weekend
 Step Back - Superheist
-Step Up the Morphine - DMA's
+Step Up The Morphine - DMA'S
 Step into My Office, Baby - Belle and Sebastian
 Stevie - Spiderbait
 Sticks 'n' Stones - Jamie T
@@ -2712,7 +2712,7 @@ The Drop - Regurgitator
 The Drowners - Suede
 The Drugs Don't Work - Ben Harper & The Innocent Criminals
 The Drugs Don't Work - The Verve
-The End - DMA's
+The End - DMA'S
 The End - The Jezabels
 The End Is the Beginning Is the End - The Smashing Pumpkins
 The Fallen - Franz Ferdinand
@@ -2723,7 +2723,7 @@ The Fighter - After the Fall
 The Futures Overrated - Arkarna
 The Ghost of Tom Joad - Rage Against the Machine
 The Girl of My Dreams (Is Giving Me Nightmares) - Machine Gun Fellatio
-The Glow - DMA's
+The Glow - DMA'S
 The Golden Path - The Chemical Brothers featuring The Flaming Lips
 The Good News - Philadelphia Grand Jury
 The Great Beyond - R.E.M.
