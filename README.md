@@ -32,15 +32,15 @@ Render is used to host the backend.
 
 ### 1.2 - TypeScript
 
-The backend features a REST api written in TypeScript, which is hosted on Render.
+The backend features a REST API written in TypeScript, which is hosted on Render.
 
 ### 1.3 - Jest
 
-The tests for the typescript files are handled by Jest.
+The tests for the TypeScript files are handled by Jest.
 
 ## 2 - CI/CD
 
-This project features a [CI/CD pipeline](.github/workflows/test-deploy.yml) that runs through Github Actions. In order to conserve CI/CD minutes, it is set to run on pull requests and pushes to main.
+This project features a [CI/CD pipeline](.github/workflows/test-deploy.yml) that runs through GitHub Actions. In order to conserve CI/CD minutes, it is set to run on pull requests and pushes to main.
 
 ### 2.1 - Automated Testing
 
@@ -161,7 +161,7 @@ This data is obtained from each hottest 100 countdown, excluding all-time and sp
       <td style="vertical-align:top">None</td>
       <td>
         <ul>
-          <li>clip&lt;clip&gt;: string (base 64 encoded mp3 audio clip)</li>
+          <li>clip&lt;clip&gt;: string (base64-encoded mp3 audio clip)</li>
         </ul>  
       </td>
     </tr>
