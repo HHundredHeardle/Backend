@@ -156,7 +156,7 @@ Animal - Jebediah
 Animal - Miike Snow
 Animal Nitrate - Suede
 Animals - Architects
-Another Way to Die[nb 4] - Jack White[nb 3] and Alicia Keys
+Another Way to Die - Jack White and Alicia Keys
 Anthem for the Year 2000 - Silverchair
 Anyone's Ghost - The National
 Anything Near Conviction - Luca Brasi
@@ -822,7 +822,7 @@ Exactly How You Are - Ball Park Music
 Exerciser - Rhubarb
 Exes - Tate McRae
 Exit Sign - Hilltop Hoods featuring Illy and Ecca Vandal
-Eye of the Storm[nb 1] - Bliss n Eso
+Eye of the Storm - Bliss n Eso
 Eyes Wide Open - Gotye
 F U Goodbye - Peach PRC
 Face Without a Name - Kisschasy
@@ -952,7 +952,7 @@ Frontier Psychiatrist - The Avalanches
 Fuck Authority - Pennywise
 Fuck Forever - Babyshambles
 Fuck You - CeeLo Green
-Fuck You[nb 5] - Lily Allen
+Fuck You - Lily Allen
 Fucken Awesome - Spiderbait
 Fuckin' Problems - A$AP Rocky featuring 2 Chainz, Drake and Kendrick Lamar
 Fuel - Metallica
@@ -1352,7 +1352,7 @@ I'm a DJ - Sonic Animation
 I'm in Love with You - The 1975
 I've Got Friends - Manchester Orchestra
 ICFTYDLM - Kingswood
-Ice Cream (Triple J live acoustic version)[nb 2] - Muscles
+Ice Cream (Triple J live acoustic version) - Muscles
 Ice Cream - Muscles
 Icky Thump - The White Stripes
 If I Could Change Your Mind - Haim
@@ -1597,7 +1597,7 @@ Lisztomania - Phoenix
 Lithonia - Childish Gambino
 Little Black Submarines - The Black Keys
 Little L - Jamiroquai
-Little Lion Man[note 1] - Mumford & Sons
+Little Lion Man - Mumford & Sons
 Little Secrets - Passion Pit
 Little Sister - Queens of the Stone Age
 Little Talks - Of Monsters and Men
@@ -2175,7 +2175,7 @@ Rehab (Remix) - Amy Winehouse featuring Jay-Z
 Relapse - Little Birdy
 Release - George
 Remember Me - Blue Boy
-Remember Me[note 3] - Tame Impala
+Remember Me - Tame Impala
 Renegades of Funk - Rage Against the Machine
 Repeat - Grinspoon
 Reptilia - The Strokes
@@ -2196,7 +2196,7 @@ Ringo (I Feel Like) - Custard
 Rip It Up - 28 Days
 Rip It Up - Jet
 Ripple - Sycco featuring Flume and Chrome Sparks
-Riptide[3] - Vance Joy
+Riptide - Vance Joy
 Risk - Gracie Abrams
 Ritual Union - Little Dragon
 Road Rage - Catatonia
@@ -3084,7 +3084,7 @@ Wild at Heart - Birds of Tokyo
 Wildfire - SBTRKT featuring Little Dragon
 Wildflower - Billie Eilish
 Wildflowers - Things of Stone and Wood
-Window and the Watcher - The Butterfly Effect[nb 3]
+Window and the Watcher - The Butterfly Effect
 Window to the Sky - Kim Churchill
 Wine - Teenage Joans
 Wish You Well - Baker Boy featuring Bernard Fanning
