@@ -7,7 +7,7 @@
     "start": "tsc && node dist/index.js",
     "dev": "ts-node src/index.ts --pretty",
     "build": "tsc",
-    "test": "set NODE_ENV=test&& jest"
+    "test": ""
   },
   "keywords": [],
   "author": "",

@@ -38,7 +38,7 @@ router.get('/', async (req: Request, res: Response) => {
         const data: any = {};
 
         // find date
-        const date: DateTime = DateTime.now().setZone("Australia/Melbourne");
+        const date: DateTime = DateTime.fromJSDate(new Date(2024, 0, 22));
 
         // lookup artist/title
         let artist = "";
