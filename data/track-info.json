@@ -1,1 +1,188 @@
-{"DMA'S": {"Step Up The Morphine": {"year": 2016, "place": 39}}, "Gang of Youths": {"Let Me Down Easy": {"year": "2017", "place": "2"}}, "Muse": {"Knights of Cydonia": {"year": "2007", "place": "1"}}, "M83": {"Midnight City": {"year": "2011", "place": "5"}}, "Tash Sultana": {"Jungle": {"year": "2016", "place": "3"}}, "Methyl Ethel": {"Ubu": {"year": "2017", "place": "4"}}, "Queens of the Stone Age": {"No One Knows": {"year": "2002", "place": "1"}}, "Skegss": {"Smogged Out": {"year": "2018", "place": "71"}}, "You Am I": {"Berlin Chair": {"year": "1994", "place": "23"}}, "The Wombats": {"Tokyo (Vampires & Wolves)": {"year": "2010", "place": "8"}}, "Angus & Julia Stone": {"Big Jet Plane": {"year": "2010", "place": "1"}}, "Flume and Chet Faker": {"Drop the Game": {"year": "2013", "place": "5"}}, "Ball Park Music": {"Surrender": {"year": "2012", "place": "27"}}, "Jebediah": {"Leaving Home": {"year": "1997", "place": "10"}}, "Starsailor": {"Four to the Floor (Thin White Duke Remix)": {"year": "2004", "place": "70"}}, "Ocean Alley": {"Way Down": {"year": "2020", "place": "72"}}, "Meg Mac": {"Never Be": {"year": "2015", "place": "11"}}, "Hockey Dad": {"Sweet Release": {"year": "2018", "place": "73"}}, "Fatboy Slim": {"The Rockafeller Skank": {"year": "1998", "place": "63"}}, "The Presets": {"Talk Like That": {"year": "2008", "place": "6"}}, "Vance Joy": {"Mess Is Mine": {"year": "2014", "place": "13"}}, "R\u00dcF\u00dcS": {"Innerbloom (What So Not Remix)": {"year": "2016", "place": "30"}}, "Arctic Monkeys": {"Mardy Bum": {"year": "2006", "place": "89"}}, "Bluejuice": {"Act Yr Age": {"year": "2011", "place": "20"}}, "alt-J": {"Breezeblocks": {"year": "2012", "place": "3"}}, "Alex Lahey": {"Every Day's the Weekend": {"year": "2017", "place": "45"}}, "Ben Lee": {"Cigarettes Will Kill You": {"year": "1998", "place": "2"}}, "BENEE": {"Glitter": {"year": "2019", "place": "19"}}, "The Jezabels": {"Endless Summer": {"year": "2011", "place": "9"}}, "Spiderbait": {"Calypso": {"year": "1997", "place": "23"}}, "Mallrat": {"Groceries": {"year": "2018", "place": "7"}}}
+{
+    "DMA'S": {
+        "Step Up The Morphine": {
+            "year": 2016,
+            "place": 39
+        }
+    },
+    "Gang of Youths": {
+        "Let Me Down Easy": {
+            "year": 2017,
+            "place": 2
+        }
+    },
+    "Muse": {
+        "Knights of Cydonia": {
+            "year": 2007,
+            "place": 1
+        }
+    },
+    "M83": {
+        "Midnight City": {
+            "year": 2011,
+            "place": 5
+        }
+    },
+    "Tash Sultana": {
+        "Jungle": {
+            "year": 2016,
+            "place": 3
+        }
+    },
+    "Methyl Ethel": {
+        "Ubu": {
+            "year": 2017,
+            "place": 4
+        }
+    },
+    "Queens of the Stone Age": {
+        "No One Knows": {
+            "year": 2002,
+            "place": 1
+        }
+    },
+    "Skegss": {
+        "Smogged Out": {
+            "year": 2018,
+            "place": 71
+        }
+    },
+    "You Am I": {
+        "Berlin Chair": {
+            "year": 1994,
+            "place": 23
+        }
+    },
+    "The Wombats": {
+        "Tokyo (Vampires & Wolves)": {
+            "year": 2010,
+            "place": 8
+        }
+    },
+    "Angus & Julia Stone": {
+        "Big Jet Plane": {
+            "year": 2010,
+            "place": 1
+        }
+    },
+    "Flume and Chet Faker": {
+        "Drop the Game": {
+            "year": 2013,
+            "place": 5
+        }
+    },
+    "Ball Park Music": {
+        "Surrender": {
+            "year": 2012,
+            "place": 27
+        }
+    },
+    "Jebediah": {
+        "Leaving Home": {
+            "year": 1997,
+            "place": 10
+        }
+    },
+    "Starsailor": {
+        "Four to the Floor (Thin White Duke Remix)": {
+            "year": 2004,
+            "place": 70
+        }
+    },
+    "Ocean Alley": {
+        "Way Down": {
+            "year": 2020,
+            "place": 72
+        }
+    },
+    "Meg Mac": {
+        "Never Be": {
+            "year": 2015,
+            "place": 11
+        }
+    },
+    "Hockey Dad": {
+        "Sweet Release": {
+            "year": 2018,
+            "place": 73
+        }
+    },
+    "Fatboy Slim": {
+        "The Rockafeller Skank": {
+            "year": 1998,
+            "place": 63
+        }
+    },
+    "The Presets": {
+        "Talk Like That": {
+            "year": 2008,
+            "place": 6
+        }
+    },
+    "Vance Joy": {
+        "Mess Is Mine": {
+            "year": 2014,
+            "place": 13
+        }
+    },
+    "R\u00dcF\u00dcS": {
+        "Innerbloom (What So Not Remix)": {
+            "year": 2016,
+            "place": 30
+        }
+    },
+    "Arctic Monkeys": {
+        "Mardy Bum": {
+            "year": 2006,
+            "place": 89
+        }
+    },
+    "Bluejuice": {
+        "Act Yr Age": {
+            "year": 2011,
+            "place": 20
+        }
+    },
+    "alt-J": {
+        "Breezeblocks": {
+            "year": 2012,
+            "place": 3
+        }
+    },
+    "Alex Lahey": {
+        "Every Day's the Weekend": {
+            "year": 2017,
+            "place": 45
+        }
+    },
+    "Ben Lee": {
+        "Cigarettes Will Kill You": {
+            "year": 1998,
+            "place": 2
+        }
+    },
+    "BENEE": {
+        "Glitter": {
+            "year": 2019,
+            "place": 19
+        }
+    },
+    "The Jezabels": {
+        "Endless Summer": {
+            "year": 2011,
+            "place": 9
+        }
+    },
+    "Spiderbait": {
+        "Calypso": {
+            "year": 1997,
+            "place": 23
+        }
+    },
+    "Mallrat": {
+        "Groceries": {
+            "year": 2018,
+            "place": 7
+        }
+    }
+}
