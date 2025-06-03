@@ -13,9 +13,9 @@ import { Request, Response, Router } from 'express';
 import fs from 'fs/promises';
 import { StatusCodes } from 'http-status-codes';
 import path from 'path';
+import { DateTime } from "luxon";
 
 const NUM_CLIPS: number = 6;
-const NUM_ARGS: number = 1;
 
 const router = Router();
 
@@ -38,22 +38,21 @@ router.get('/', async (req: Request, res: Response) => {
         const data: any = {};
 
         // find date
-        // mock date
-        const date = new Date(2025, 4, 2);
+        const date: DateTime = DateTime.fromJSDate(new Date(2024, 0, 22));
 
         // lookup artist/title
         let artist = "";
         let title = "";
         try {
             const tracks = require("../../data/tracks.json");
-            const song = tracks[date.getFullYear()][date.getMonth()][date.getDate()];
+            const song = tracks[date.year][date.month][date.day];
             artist = song["artist"];
             title = song["title"];
         }
         catch {
             console.log("Date not found in tracks.json. using default");
             const defaults = require("../../data/defaults.json");
-            const song = defaults[date.getDate()];
+            const song = defaults[date.day];
             artist = song["artist"];
             title = song["title"];
         }
