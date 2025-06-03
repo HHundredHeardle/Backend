@@ -12,6 +12,15 @@ const NUM_CLIPS: number = 6;
 
 describe('GET /api/clip', () => {
 
+    beforeAll(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date("2025-01-02T12:00:00+11:00"));
+    });
+
+    afterAll(() => {
+        jest.useRealTimers();
+    });
+
     it("Returns a JSON", async () => {
         const response = await request(app).get("/api/clip").query({ "clip": 1 });
 
@@ -43,6 +52,17 @@ describe('GET /api/clip', () => {
             expect(response.status).toBe(StatusCodes.OK);
 
             expect(!response.body[`clip${i}`]).toBe(false);
+        }
+    });
+
+    it("Retrieves Step Up The Morphine by DMA'S", async () => {
+        const testData = require("./clip.test.data.json");
+        for (let i = 1; i < NUM_CLIPS + 1; i++) {
+            const response = await request(app).get("/api/clip").query({ "clip": i });
+
+            expect(response.status).toBe(StatusCodes.OK);
+
+            expect(response.body[`clip${i}`] == testData[`clip${i}`]).toBe(true);
         }
     });
 

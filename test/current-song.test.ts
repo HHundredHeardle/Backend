@@ -8,6 +8,15 @@ import request from 'supertest';
 import { app } from '../src/';
 import { StatusCodes } from 'http-status-codes';
 
+beforeAll(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date("2025-01-02T12:00:00+11:00"));
+});
+
+afterAll(() => {
+    jest.useRealTimers();
+});
+
 describe('GET /api/current-song', () => {
 
     it("Returns a JSON", async () => {
