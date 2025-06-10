@@ -63,7 +63,7 @@ describe('GET /api/clip', () => {
         jest.setSystemTime(new Date("2025-01-01T12:00:00+11:00"));
         jest.doMock("../data/tracks.json", () => (require("./mocks/tracks.Step Up The Morphine.json")), { virtual: true });
         jest.doMock("../data/defaults.json", () => (require("./mocks/empty.json")), { virtual: true });
-        const testData = require("./data/clip.test.Step Up the Morphine.json");
+        const testData = require("./data/clip.test.Step Up The Morphine.json");
         for (let i = 1; i < NUM_CLIPS + 1; i++) {
             const response = await request(app).get("/api/clip").query({ "clip": i });
 
@@ -77,7 +77,7 @@ describe('GET /api/clip', () => {
         jest.setSystemTime(new Date("2025-01-10T12:00:00+11:00"));
         jest.doMock("../data/tracks.json", () => (require("./mocks/empty.json")), { virtual: true });
         jest.doMock("../data/defaults.json", () => (require("./mocks/defaults.Step Up The Morphine.json")), { virtual: true });
-        const testData = require("./data/clip.test.Step Up the Morphine.json");
+        const testData = require("./data/clip.test.Step Up The Morphine.json");
         for (let i = 1; i < NUM_CLIPS + 1; i++) {
             const response = await request(app).get("/api/clip").query({ "clip": i });
 
