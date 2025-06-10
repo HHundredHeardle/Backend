@@ -14,7 +14,11 @@ describe('GET /api/clip', () => {
 
     beforeAll(() => {
         jest.useFakeTimers();
-        jest.setSystemTime(new Date("2025-01-02T12:00:00+11:00"));
+    });
+
+    afterEach(() => {
+        jest.clearAllMocks();
+        jest.resetModules();
     });
 
     afterAll(() => {
@@ -55,8 +59,25 @@ describe('GET /api/clip', () => {
         }
     });
 
-    it("Retrieves Step Up The Morphine by DMA'S", async () => {
-        const testData = require("./clip.test.data.json");
+    it("Retrieves correct song", async () => {
+        jest.setSystemTime(new Date("2025-01-01T12:00:00+11:00"));
+        jest.doMock("../data/tracks.json", () => (require("./mocks/tracks.Step Up The Morphine.json")), { virtual: true });
+        jest.doMock("../data/defaults.json", () => (require("./mocks/empty.json")), { virtual: true });
+        const testData = require("./data/clip.test.Step Up The Morphine.json");
+        for (let i = 1; i < NUM_CLIPS + 1; i++) {
+            const response = await request(app).get("/api/clip").query({ "clip": i });
+
+            expect(response.status).toBe(StatusCodes.OK);
+
+            expect(response.body[`clip${i}`] == testData[`clip${i}`]).toBe(true);
+        }
+    });
+
+    it("Retrieves default tracks", async () => {
+        jest.setSystemTime(new Date("2025-01-10T12:00:00+11:00"));
+        jest.doMock("../data/tracks.json", () => (require("./mocks/empty.json")), { virtual: true });
+        jest.doMock("../data/defaults.json", () => (require("./mocks/defaults.Step Up The Morphine.json")), { virtual: true });
+        const testData = require("./data/clip.test.Step Up The Morphine.json");
         for (let i = 1; i < NUM_CLIPS + 1; i++) {
             const response = await request(app).get("/api/clip").query({ "clip": i });
 

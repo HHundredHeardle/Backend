@@ -10,7 +10,11 @@ import { StatusCodes } from 'http-status-codes';
 
 beforeAll(() => {
     jest.useFakeTimers();
-    jest.setSystemTime(new Date("2025-01-02T12:00:00+11:00"));
+});
+
+afterEach(() => {
+    jest.clearAllMocks();
+    jest.resetModules();
 });
 
 afterAll(() => {
@@ -55,13 +59,35 @@ describe('GET /api/current-song', () => {
         expect(!response.body["place"]).toBe(false);
     });
 
-    it('Retrieves Step Up The Morphine by DMA\'S', async () => {
-        const response = await request(app).get('/api/current-song');
+    it("Retrieves correct song", async () => {
+        jest.setSystemTime(new Date("2025-01-01T12:00:00+11:00"));
+        jest.doMock("../data/tracks.json", () => (require("./mocks/tracks.Step Up The Morphine.json")), { virtual: true });
+        jest.doMock("../data/defaults.json", () => (require("./mocks/empty.json")), { virtual: true });
+        const testData = require("./data/current-song.test.Step Up The Morphine.json");
+
+        const response = await request(app).get("/api/current-song");
+
         expect(response.status).toBe(StatusCodes.OK);
-        expect(response.body['artist']).toBe('DMA\'S');
-        expect(response.body['title']).toBe('Step Up The Morphine');
-        expect(response.body["year"]).toBe(2016);
-        expect(response.body["place"]).toBe(39);
+
+        expect(response.body["artist"] == testData["artist"]).toBe(true);
+        expect(response.body["title"] == testData["title"]).toBe(true);
+        expect(response.body["year"] == testData["year"]).toBe(true);
+        expect(response.body["place"] == testData["place"]).toBe(true);
     });
 
+    it("Retrieves default tracks", async () => {
+        jest.setSystemTime(new Date("2025-01-10T12:00:00+11:00"));
+        jest.doMock("../data/tracks.json", () => (require("./mocks/empty.json")), { virtual: true });
+        jest.doMock("../data/defaults.json", () => (require("./mocks/defaults.Step Up The Morphine.json")), { virtual: true });
+        const testData = require("./data/current-song.test.Step Up The Morphine.json");
+
+        const response = await request(app).get("/api/current-song");
+
+        expect(response.status).toBe(StatusCodes.OK);
+
+        expect(response.body["artist"] == testData["artist"]).toBe(true);
+        expect(response.body["title"] == testData["title"]).toBe(true);
+        expect(response.body["year"] == testData["year"]).toBe(true);
+        expect(response.body["place"] == testData["place"]).toBe(true);
+    });
 });
